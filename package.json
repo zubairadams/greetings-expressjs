@@ -1,0 +1,27 @@
+{
+  "name": "greetings-expressjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zubairadams/greetings-expressjs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zubairadams/greetings-expressjs/issues"
+  },
+  "homepage": "https://github.com/zubairadams/greetings-expressjs#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "express-sessions": "^1.0.6",
+    "handlebars": "^4.0.12"
+  }
+}

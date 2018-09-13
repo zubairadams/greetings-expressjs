@@ -1,0 +1,100 @@
+body{
+    /* background-color:  #ff4d88; */
+     background-image: radial-gradient(white 5%, black 15%, white 60%);*/
+    /*background-image: repeating-radial-gradient(white, black 10%,white 15%)
+
+    /* background-image: repeating-radial-gradient(white, black 10%,white 15%) 
+    background-image: repeating-linear-gradient(white, black 10%, white 20%); */
+  }
+.Total{
+}
+.head1{
+  position: relative;
+animation-name: example;
+animation-duration: 5;
+animation-delay: 2s;
+animation-fill-mode: forwards;
+-webkit-animation-name: example;  /* Safari 4.0 - 8.0 */
+-webkit-animation-duration: 3s;  /* Safari 4.0 - 8.0 */
+-webkit-animation-delay: 0s; /* Safari 4.0 - 8.0 */
+-webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
+  margin-left: 25%;
+  width: 20%;
+}
+.textBox {
+  position: relative;  position: relative;
+  animation-name: example;
+  animation-duration: 5;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  -webkit-animation-name: example;  /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 3s;  /* Safari 4.0 - 8.0 */
+  -webkit-animation-delay: 0s; /* Safari 4.0 - 8.0 */
+  -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
+    margin-left: 25%;
+    width: 20%;
+animation-name: texts;
+animation-duration: 5s;
+animation-delay: 2s;
+animation-fill-mode: forwards;
+-webkit-animation-name: texts;  /* Safari 4.0 - 8.0 */
+-webkit-animation-duration: 3s;  /* Safari 4.0 - 8.0 */
+-webkit-animation-delay: 0s; /* Safari 4.0 - 8.0 */
+-webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
+  margin-left: 25%;
+}
+@keyframes texts {
+  from {bottom: 200px; background-color: #0000;}
+  to {bottom: 0px;}
+}
+@-webkit-keyframes texts {
+  from {bottom: 200px; background-color: #0000;}
+  to {bottom: 0px;}
+}
+@keyframes example {
+  from {top: 200px; background-color: #0000;}
+  to {top: 0px;}
+}
+@-webkit-keyframes example {
+    from {top:200px; background-color: #0000;}
+    to {top: 0px;}
+
+}
+.submit{
+  border-radius: 15%;
+      position: relative;
+  animation-name: example;
+animation-duration: 5s;
+animation-delay: 0s;
+animation-fill-mode: backwards;
+-webkit-animation-name: example;  /* Safari 4.0 - 8.0 */
+-webkit-animation-duration: 3s;  /* Safari 4.0 - 8.0 */
+-webkit-animation-delay: 0s; /* Safari 4.0 - 8.0 */
+-webkit-animation-fill-mode: backwards; /* Safari 4.0 - 8.0 */
+  width: 100px;
+height: 50px;
+
+}
+.counter1{  position: relative;
+animation-name: example;
+animation-duration: 5;
+animation-delay: 2s;
+animation-fill-mode: backwards;
+-webkit-animation-name: example;  /* Safari 4.0 - 8.0 */
+-webkit-animation-duration: 3s;  /* Safari 4.0 - 8.0 */
+-webkit-animation-delay: 0s; /* Safari 4.0 - 8.0 */
+-webkit-animation-fill-mode: backwards; /* Safari 4.0 - 8.0 */
+  margin-left: 25%;
+  width: 3em;
+  font-size: 30px;
+    /* background-color:  #ff4d88; */
+    border:plain;
+    margin-top: 1em;
+}
+.returnGreet{
+      /* background-color:  #ff4d88; */
+        border: none;
+          width: 20%;
+            margin-left: 25%;
+
+}
