@@ -1,29 +1,82 @@
-<div class='container'>
-    <div class="Total">
-
-
-        <div class="head1">
+<body>
+         <div class="head1">
 
             <marquee behavior="alternate">
                 <h1> Greetings </h1>
             </marquee>
         </div>
-        <div class="textBox"> 
-            <form action="/action_page.php">
-              <b>  Enter Name Here: </b><input type="text" name="FirstName" value="" class="TEXT"><br>
-              <b>  English</b><input type="radio" name="Language" value="English">
-                <b>Afrikaans</b><input type="radio" name="Language" value="Afrikaans">
-                <b>Xhosa</b><input type="radio" name="Language" value="Xhosa">
-                <br>
+    <div class="grid">
+
+        <div class="row">
+            <form action="/greetings" method="POST">
+
+                <div class="MyTextbox">
+
+                    <input type="text" name="textBox" placeholder="  Please enter a name" class="takesText">
+                </div>
+
+                <div class="textBox1">
+
+    
+                    <input type="radio" name="language" class="languageRadio" value="xhosa">
+                    <span class="label-body">IsiXhosa</span>
+                    <input type="radio" name="language" class="languageRadio" value="afrikaans">
+                    <span class="label-body">Afrikaans</span>
+                    <input type="radio" name="language" class="languageRadio" value="english">
+                    <span class="label-body">english</span>
+
+                </div>
+                <button class="counter1" type="submit" name="button"><strong>Greet</strong></button>
             </form>
-            <input type="submit" value="Greet" class="submit">
-            <input type="reset" value="Reset" class="submit">
         </div>
 
-        <div class="counter1">
 
 
-            <b>Counter</b> <input type="counter" name="counter" value="0" class="counter1">
+
+
+        <div class="MyTableLink">
+
+            <table>
+                <tr>
+                    <td>
+                        <a href="/greeted">Names greeted</a>
+                    </td>
+                    <td>
+                        <span class="ViewCount">{{greeted.names}}</span>
+                    </td>
+                </tr>
+            </table>
+            </dsiv>
+
+            <form action="/resetBn" method="POST">
+
+                <div class="MyResetBtn">
+
+                    <button class="button-primary  resetBtn" type="submit" name="button"><strong>Reset</strong></button>
+                  
+                </div>
+            </form>
+
+            <div class="MyDisplay">
+
+                <h2 class="displayOut"><span>{{greet}}</span></h2>
+            </div>
+
+            <div class="MyCounter">
+                <div>Counter : <span id="counting">{{count}}</span> </div>
+            </div>
+
+            <div class="MyErrorMsg">
+                {{#if messages.info}}
+                <div class="entry" id="errorInfo">
+                    <p>
+                        {{messages.info}}
+                    </p>
+                </div>
+                {{/if}}
+            </div>
+
+
         </div>
-    </div>
-</div>
+
+</body>

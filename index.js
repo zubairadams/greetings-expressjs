@@ -3,9 +3,11 @@ const exphbs = require('express-handlebars');
 const app = express();
 const bodyParser = require('body-parser');
 const greetings = require('./greetings-factory');
+// const flash = require('express-flash');
 
-const greet = greetings();
-
+const pg = require("pg");
+const pool = pg.Pool;
+let greet = greetings(pool)
 
 app.engine('handlebars', exphbs({
     defaultLayout: 'main',
@@ -13,7 +15,7 @@ app.engine('handlebars', exphbs({
 
 app.set('view engine', 'handlebars');
 
-
+// app.use(flash());
 app.use(express.static('public'));
 
 
@@ -23,19 +25,14 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-app.get('/', function (req, res) {
-res.render("index", {
- greetings: greet.Rest(), 
-});
-});
 
-app.get('/the-route', function (req, res) {
-    req.flash('info', 'Flash Message Added');
-    res.redirect('/');
-});
-app.get('/actions/:type', function (req, res) {
-
-});
+app.post('greetings-factory'
+);
+// app.get('/the-route', function (req, res) {
+//     req.flash('info', 'Flash Message Added');
+//     res.redirect('/');
+// });
+app.get('/', function (req, res) {});
 let PORT = process.env.PORT || 4020;
 
 app.listen(PORT, function () {

@@ -1,6 +1,6 @@
 body{
     /* background-color:  #ff4d88; */
-     background-image: radial-gradient(white 5%, black 15%, white 60%);*/
+     background-image: radial-gradient(white 5%, rgb(255, 255, 255) 15%, white 60%);*/
     /*background-image: repeating-radial-gradient(white, black 10%,white 15%)
 
     /* background-image: repeating-radial-gradient(white, black 10%,white 15%) 
@@ -21,7 +21,7 @@ animation-fill-mode: forwards;
   margin-left: 25%;
   width: 20%;
 }
-.textBox {
+.textBox1 {
   position: relative;  position: relative;
   animation-name: example;
   animation-duration: 5;
@@ -97,4 +97,14 @@ animation-fill-mode: backwards;
           width: 20%;
             margin-left: 25%;
 
+}
+.MyTableLink{
+  border: none;
+  width: 20%;
+    margin-left: 25%;
+}
+.MyTextbox{
+  border: none;
+  width: 20%;
+    margin-left: 25%;
 }
