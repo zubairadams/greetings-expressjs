@@ -1,24 +1,25 @@
 module.exports = function (pool) {
 
-  async function greet(name, language) {
+  // async
+   function greet(name, language) {
 
-    name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+    // name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
 
-    if (name !== '' && language !== undefined) {
+    // if (name !== '' && language !== undefined) {
 
-      let result = await pool.query('SELECT * FROM greeteduser WHERE username=$1', [name]);
-      console.log("after select");
+    //   let result = await pool.query('SELECT * FROM users WHERE username=$1', [name]);
+     
 
 
-      if (result.rowCount === 0) {
+    //   if (result.rowCount === 0) {
 
-        await pool.query('INSERT into greeteduser (username, counter) values ($1, 1)', [name]);
-        console.log("after insert");
-      } else {
+    //     await pool.query('INSERT into users (username, counter) values ($1, 1)', [name]);
+       
+    //   } else {
 
-        await pool.query('UPDATE greeteduser SET counter = counter+1 WHERE username=$1', [name]);
+    //     await pool.query('UPDATE users SET counter = counter+1 WHERE username=$1', [name]);
       
-      }
+    //   }
 
       if (language === 'xhosa') {
         return 'Molo ' + name
@@ -29,48 +30,45 @@ module.exports = function (pool) {
       }
 
       if (language === 'afrikaans') {
-        return 'More ' + name
-      }
-
-      if (language === 'seSotho') {
-        return 'Dumela ' + name
+        return ' More ' + name
       }
     }
+  
+
+
+
+
+  // async
+   function resetBtn() {
+
+
+    // let resetBtn = await pool.query('DELETE FROM users');
+    let = name = '';
+    let = language = '';
+    return resetBtn;
   }
 
+  //async
+   function count() {
 
+    // let seeTable = await pool.query('SELECT id FROM users');
+    // let nameCounted = seeTable.rowCount;
 
-
-  async function resetBn() {
-
-
-    let resetBtn = await pool.query('DELETE FROM greeteduser');
-    name = '';
-    language = '';
-    return resetBtn.rowCount;
+    return nameCounted;
   }
 
-  async function count() {
+  // async function Name() {
 
-    let seeTable = await pool.query('SELECT id FROM greeteduser');
-    let namesCounted = seeTable.rowCount;
-    console.log(seeTable);
-
-    return namesCounted;
-  }
-
-  async function names() {
-
-    let namesGreeted = await pool.query('SELECT * FROM greeteduser');
-    return namesGreeted.rows;
-  }
+  //   let namesGreeted = await pool.query('SELECT * FROM users');
+  //   return namesGreeted.rows;
+  // }
 
 
 
   return {
-    names,
+    // Name,
     count,
     greet,
-    resetBn
+    resetBtn
   }
 };
