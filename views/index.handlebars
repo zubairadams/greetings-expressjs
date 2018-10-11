@@ -1,9 +1,9 @@
 <body>
          <div class="head1">
 
-            <marquee behavior="alternate">
+            {{!-- <marquee behavior="alternate"> --}}
                 <h1> Greetings </h1>
-            </marquee>
+            {{!-- </marquee> --}}
         </div>
     <div class="grid">
 
@@ -16,12 +16,10 @@
                 </div>
 
                 <div class="textBox1">
-
-    
                     <input type="radio" name="language" class="languageRadio" value="xhosa">
-                    <span class="label-body">IsiXhosa</span><br>
+                    <span class="label-body">IsiXhosa</span>
                     <input type="radio" name="language" class="languageRadio" value="afrikaans">
-                    <span class="label-body">Afrikaans</span><br>
+                    <span class="label-body">Afrikaans</span>
                     <input type="radio" name="language" class="languageRadio" value="english">
                     <span class="label-body">english</span>
 
@@ -31,7 +29,7 @@
                 
             </form>
 <div class="returns">
-   {{key1}}
+   {{GREET}}
 </div>
         </div>
 
@@ -58,7 +56,7 @@
 
                 <div class="MyResetBtn">
 
-                    <button class="button-primary  resetBtn" type="submit" name="button"><strong>Reset</strong></button>
+                    <button class="resetBtn" type="submit" name="button"><strong>Reset</strong></button>
                   
                 </div>
             </form>
@@ -69,10 +67,10 @@
             </div>
 
             <div class="MyCounter">
-                <div>Counter : <span id="counting">{{count}}</span> </div>
+                <div>Counter : <span id="counting">{{Count}}</span> </div>
             </div>
 
-            <div class="MyErrorMsg">
+            <div class="theErrorMsg">
                 {{#if messages.info}}
                 <div class="entry" id="errorInfo">
                     <p>

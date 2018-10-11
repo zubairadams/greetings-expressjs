@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const greetings = require('./greetings-factory');
 // const flash = require('express-flash');
 const pg = require("pg");
-const Pool = pg.Pool;const connectionString = process.env.DATABASE_URL || "postgres://coder:pg123@localost:5432/"
+const Pool = pg.Pool;const connectionString = process.env.DATABASE_URL || 'postgresql://coder:pg123@localhost:5432/greetings'
 let useSSL = false;
 let local = process.env.LOCAL || false;
 if (process.DATABASE_URL && !LOCAL){
@@ -15,43 +15,60 @@ let pool = new Pool({
     connectionString,
     ssl : useSSL
 });
-const Greet = greetings(pool);
+const greetinst = greetings(pool);
 app.engine('handlebars', exphbs({
     defaultLayout: 'main',
 }));
 app.set('view engine', 'handlebars');
 // app.use(flash());
-app.use(express.static('public'));
+app.use(express.static('public'));  
 app.use(bodyParser.urlencoded({
     extended: false
 }));
 app.use(bodyParser.json());
 app.get("/", async function (req, res) {
-    res.render('index')
+   let Count = await greetinst.count()
+    res.render('index', {
+        Count
+    }
+    )
 });
 app.post("/resetBn", async function(req, res){
-let greet =await greet.resetBn
-    greet.resetBtn();
+// let greet = Greet.resetBn
+let reset = await greetinst.resetBtn();    
+res.render('index', {
+
+    reset
+})
 });
 app.post('/greetings', async function (req, res, next) {
-        let name = req.body.textBox;
+    try{  
+    let name = req.body.textBox;
         let language = req.body.language;
         // res.redirect("/")
+        console.log (name, language)
+          
         
+            
+            let GREET =  await greetinst.greet(name, language);
+        // console.log('here',key1)
+   
         
-            // Count: await greet.count()
-        
-        res.render('index', {
-           key1: Greet.greet(name, language),
+        res.render('index', { 
+            GREET
             // greet: greet.greet(name, language),
             //  count: Greet.count()
         });  
+    } 
+    catch(error){
+        next(error);
+    }
 });
+
 app.post("action",async function (req, res){
 
 res.render('index',{
     
-
 })
 });
   
