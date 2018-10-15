@@ -33,11 +33,13 @@ catch(error){
 }
  }
   async function resetBtn() {
-   let resetBtn = await pool.query('DELETE FROM usersGreeted');
-    let = name = '';
-    let = language = '';
-    return resetBtn;
+  //  let resetBtn = 
+   await pool.query('DELETE FROM usersGreeted;');
+    let name = '';
+    let language = '';
+    // return resetBtn;
   }
+
 
 async function count() {
     let seeTable = await pool.query('SELECT id FROM usersGreeted');
