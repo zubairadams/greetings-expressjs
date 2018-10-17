@@ -47,13 +47,20 @@ async function count() {
     return namesCounted;
   }
   async function Name() {
-    let namesGreeted = await pool.query('SELECT * FROM usersGreeted');
+    let namesGreeted = await pool.query('SELECT * FROM usersGreeted;');
     return namesGreeted.rows;
+  }
+  async function persons(person){
+    let users = await pool.query('SELECT * FROM usersGreeted WHERE Username=$1', [person]);
+  // console.log('here',users.rows)
+    return users.rows[0]
   }
   return {
     Name,
     count,
     greet,
-    resetBtn
+    resetBtn,
+    persons
   }
+
 };

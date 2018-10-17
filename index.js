@@ -57,7 +57,7 @@ app.post('/greetings', async function (req, res, next) {
 
         let GREET = await greetinst.greet(name, language);
         let Count = await greetinst.count();
-        let Names = await greetinst. Name();
+        let Names = await greetinst.Name();
         // console.log('here',key1);
         res.render('index', {
             GREET,
@@ -68,24 +68,34 @@ app.post('/greetings', async function (req, res, next) {
         next(error);
     }
 });
-app.get('/greets', async function (res, req, next) {
-    try{
-    let greeted = await greetinst. Name();
-    res.render('index',{
-        greeted
-    })
-}catch(error){
-next(error);
+
+app.get('/action/:person',async function(req, res, next){
+try{
+    let person = req.params.person;
+   
+    let greetedPerson = await greetinst.persons(person) 
+    console.log(greetedPerson)
+    res.render('actions',{
+        greetedPerson
+})
+} catch(error){
+    next(error);
 }
+
 });
-app.post("action", async function (req, res) {
-
-    res.render('index', {
-
-    })
+app.get('/greeted', async function (req, res, next) {
+    try {
+        let Names = await greetinst.Name();
+        // console.log(greeted.rows);
+        res.render('table', {
+           result: Names
+        });
+    } catch (error) {
+        next(error);
+    }
 });
 
-let PORT = process.env.PORT || 4002;
+let PORT = process.env.PORT || 4001;
 app.listen(PORT, function () {
     console.log('App started on port', PORT);
 });
