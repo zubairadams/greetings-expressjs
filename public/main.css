@@ -9,6 +9,10 @@ body{
   }
 .Total{
 }
+.theErrorMsg{
+  font-size: 2em;
+  margin-left: 25%;
+}
 .head1{
   position: relative;
 animation-name: example;

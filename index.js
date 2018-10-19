@@ -3,7 +3,8 @@ const exphbs = require('express-handlebars');
 const app = express();
 const bodyParser = require('body-parser');
 const greetings = require('./greetings-factory');
-// const flash = require('express-flash');
+const flash = require('express-flash');
+const session = require('express-session');
 const pg = require("pg");
 const Pool = pg.Pool;
 const connectionString = process.env.DATABASE_URL || 'postgresql://coder:pg123@localhost:5432/greetings'
@@ -21,7 +22,12 @@ app.engine('handlebars', exphbs({
     defaultLayout: 'main',
 }));
 app.set('view engine', 'handlebars');
-// app.use(flash());
+app.use(flash());
+app.use(session({
+    secret: '<add a secret string here>',
+        resave: false,
+        saveUninitialized: true
+    }));
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({
     extended: false
@@ -48,22 +54,28 @@ app.post('/resetBn', async function (req, res) {
         reset
     })
 });
+
 app.post('/greetings', async function (req, res, next) {
     try {
         let name = req.body.textBox;
         let language = req.body.language;
         // res.redirect("/")
         console.log(name, language)
-
+        if(name !== '' && language !== undefined){
         let GREET = await greetinst.greet(name, language);
         let Count = await greetinst.count();
         let Names = await greetinst.Name();
+       
         // console.log('here',key1);
         res.render('index', {
             GREET,
             Count,
             Names
         });
+    }else{
+        req.flash('error', 'please insert name and select langauge')
+        res.redirect('/');
+    }
     } catch (error) {
         next(error);
     }

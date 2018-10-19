@@ -31,8 +31,18 @@
 <div class="returns">
    {{GREET}}
 </div>
+
         </div>
 
+            <div class="theErrorMsg">
+                {{#if messages.error}}
+                <div class="error" id="errorInfo">
+                    <p>
+                        {{messages.error}}
+                    </p>
+                </div>
+                {{/if}}
+            </div>
 
 
 
@@ -63,6 +73,7 @@
 
             <div class="MyDisplay">
 
+
                 <h2 class="displayOut"><span>{{greet}}</span></h2>
             </div>
 
@@ -70,15 +81,6 @@
                 <div>Counter : <span id="counting">{{Count}}</span> </div>
             </div>
 
-            <div class="theErrorMsg">
-                {{#if messages.info}}
-                <div class="entry" id="errorInfo">
-                    <p>
-                        {{messages.info}}
-                    </p>
-                </div>
-                {{/if}}
-            </div>
 
         </div>
 
