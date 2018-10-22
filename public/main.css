@@ -9,8 +9,21 @@ body{
   }
 .Total{
 }
+.reason{
+  font-size: 24px;
+}
+.reasons{
+  font-size: 10px;
+}
 .theErrorMsg{
+  color: red;
   font-size: 2em;
+  margin-left: 25%;
+}
+.otherPage{
+  font-size: 20px;
+  font-style: italic;
+  width: 50%;
   margin-left: 25%;
 }
 .head1{

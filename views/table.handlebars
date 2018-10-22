@@ -1,4 +1,6 @@
-<table>
+<div class="otherPage">
+    <h1>Names Greeted</h1>
+<table>    
     <tr>
         <th>names</th>
         <th>counter</th>
@@ -6,11 +8,15 @@
 {{#each result}}
     <tr>
         <td>
-            <a href='action/{{username}}'>{{username}}
-        </td>
+            <div class="reason">
+       <b>     <a href='action/{{username}}'>{{username}}</b>
+        </div></td>
         <td>
+            <div class="reason">
             {{counter}}
+            </div>
         </td>
     </tr>
 {{/each}}
 </table>
+</div>

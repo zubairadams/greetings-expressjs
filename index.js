@@ -72,10 +72,16 @@ app.post('/greetings', async function (req, res, next) {
             Count,
             Names
         });
-    }else{
-        req.flash('error', 'please insert name and select langauge')
+    }else if(name !== '' && language == undefined) {
+        req.flash('error', 'please insert Name')
         res.redirect('/');
-    }
+    }else if(name == '' && language !== undefined) {   req.flash('error', 'please select langauge')
+    res.redirect('/');
+}else{   req.flash('error', 'please select langauge and insert name')
+res.redirect('/');
+
+}
+    
     } catch (error) {
         next(error);
     }
