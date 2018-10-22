@@ -19,7 +19,7 @@
   "homepage": "https://github.com/zubairadams/greetings-expressjs#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.3",
+    "express": "^4.16.4",
     "express-flash": "0.0.2",
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
@@ -27,7 +27,7 @@
     "flash-express": "^1.0.4",
     "handlebars": "^4.0.12",
     "mocha": "^5.2.0",
-    "pg": "^7.4.3",
+    "pg": "^7.5.0",
     "sessions": "0.0.2-7",
     "ssl": "^1.0.0"
   }
