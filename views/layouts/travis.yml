@@ -8,7 +8,7 @@ node_js:
 
 before_script:
   - psql -c 'create database  usersGreeted;' -U postgres
-  - psql -U postgres -d usersGreeted -f table.sql
+  - psql -U postgres -d username -f table.sql
 
 addons:
     apt:
