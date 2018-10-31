@@ -7,7 +7,7 @@ node_js:
   - "8.9.4"
 
 before_script:
-  - psql -c 'create database  greetings;' -U postgres
+  - psql -c 'create database greetings;' -U postgres
   - psql -U postgres -d greetings -a -f greet.sql
 
 addons:
