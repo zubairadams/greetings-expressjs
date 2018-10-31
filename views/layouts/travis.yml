@@ -11,6 +11,6 @@ before_script:
   - psql -U postgres -d usersGreeted -f table.sql
 
 addons:
-    apt:
-    packages:
-    - postgresql-server-dev-9.2
+  apt:
+  packages:
+  - postgresql-server-dev-9.2
