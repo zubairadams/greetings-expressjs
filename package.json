@@ -34,7 +34,7 @@
     "ssl": "^1.0.0"
   },
   "directories": {
-    "test": "tests"
+    "test": "mocha"
   },
   "devDependencies": {}
 }
