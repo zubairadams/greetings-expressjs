@@ -1,14 +1,14 @@
 language: node_js
 
 env:
-  - DATABASE_URL=postgresql://postgres@localhost:5432/usersGreeted
+  - DATABASE_URL=postgresql://postgres@localhost:5432/greetings
 
 node_js:  
-  - '8.11.4'
+  - "8.11.4"
 
 before_script:
   - psql -c 'create database  usersGreeted;' -U postgres
-  - psql -U postgres -d username -f table.sql
+  - psql -U postgres -d usersGreeted -f table.sql
 
 addons:
     apt:
