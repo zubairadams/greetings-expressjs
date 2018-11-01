@@ -7,7 +7,7 @@ try{
     if (name !== '' && language !== undefined) {
 
       let result = await pool.query('SELECT * FROM usersGreeted WHERE Username=$1', [name]);
-      console.log(result)
+      // console.log(result)
       if (result.rowCount === 0) {
         await pool.query('INSERT into usersGreeted (Username, counter) values ($1, 1)', [name]);   
       } else {

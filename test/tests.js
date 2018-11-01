@@ -2,6 +2,7 @@ let assert = require('assert');
 let greetings = require('../greetings-factory');
 const pg = require('pg');
 const Pool = pg.Pool;
+// let indi = require('../index');
 let mocha = require("mocha")
 const connectionString = process.env.DATABASE_URL || 'postgresql://coder:pg123@localhost:5432/greetings';
 
