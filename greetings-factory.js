@@ -44,6 +44,7 @@ catch(error){
 async function count() {
     let seeTable = await pool.query('SELECT id FROM usersGreeted');
     let namesCounted = seeTable.rowCount;
+    console.log(namesCounted)
     return namesCounted;
   }
   async function Name() {
