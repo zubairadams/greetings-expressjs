@@ -2,7 +2,7 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const app = express();
 const bodyParser = require('body-parser');
-const greetings = require('./greetings-factory');
+const Greetings = require('./greetings-factory');
 const flash = require('express-flash');
 const session = require('express-session');
 const routesGreet = require('./routes/routes.js');
@@ -18,7 +18,7 @@ let pool = new Pool({
     connectionString,
     ssl: useSSL
 });
-const greetinst = greetings(pool);
+const greetinst = Greetings(pool);
 const routes = routesGreet(greetinst)
 app.engine('handlebars', exphbs({
     defaultLayout: 'main',
